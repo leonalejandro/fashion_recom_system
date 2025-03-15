@@ -1,0 +1,8 @@
+ID = "id"
+PARAM_REDIS_USER = "user_id"
+PARAM_REDIS_TOP = "top"
+PARAM_REDIS_LIST_RECOM = "recomendations"
+UTF_8 = "utf-8"
+CUSTOMER_ID = "customer_id"
+TOP = "top"
+REVIEWS_PATH = "data/filtered/df_reviews.csv"

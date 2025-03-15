@@ -1,0 +1,36 @@
+services:
+   
+  redis:
+    image: redis:6.2.6
+    ports:
+      - '6379:6379'
+
+  model:
+    build:
+      context: ./model
+      args:
+        - UID=${UID}
+      target: build
+    container_name: model
+    depends_on:
+      - redis
+      
+  api:
+    build:
+      args:
+        - UID=${UID}
+        - GUNICORN_TIMEOUT=${GUNICORN_TIMEOUT}
+      context: ./api
+      target: production
+    env_file:
+      - .env
+    container_name: api-application
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+      - model
+    environment:
+      FLASK_ENV: development
+      FLASK_APP: app.py
+

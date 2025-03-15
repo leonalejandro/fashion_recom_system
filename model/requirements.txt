@@ -1,0 +1,9 @@
+tensorflow==2.18.0
+tensorflow-hub==0.16.1
+numpy==2.0.0
+pandas==2.2.3
+transformers==4.49.0
+scikit-learn==1.6.1
+pillow==11.1.0
+redis==4.1.4
+seaborn==0.13.2
